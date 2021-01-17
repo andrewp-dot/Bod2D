@@ -1,0 +1,3 @@
+D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/CMakeFiles/Bod.dir
+D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/CMakeFiles/edit_cache.dir
+D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Bod"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Bod">
+				<Option output="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Bod.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 Bod"/>
+					<CompileFile command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Bod/fast">
+				<Option output="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Bod.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 Bod/fast"/>
+					<CompileFile command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Ap/Programovanie/MAP/MinGW/mingw64/bin/mingw32-make.exe -f &quot;D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/main.cpp">
+			<Option target="Bod"/>
+		</Unit>
+		<Unit filename="D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

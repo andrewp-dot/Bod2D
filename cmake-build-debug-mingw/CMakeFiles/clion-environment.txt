@@ -1,0 +1,4 @@
+ToolSet: w64 6.0 (local)@D:\Ap\Programovanie\MAP\MinGW\mingw64
+Options: 
+
+Options:
