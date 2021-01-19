@@ -16,15 +16,14 @@ public:
     Bod2D(float myX, float myY);
     friend std::ostream & operator<<(std::ostream &os, const Bod2D &point);
     friend std::istream & operator>>(std::istream &is, Bod2D &point);
-    friend Bod2D operator+(Bod2D &point1, Bod2D &point2);
-    friend Bod2D operator-(Bod2D &point1, Bod2D &point2);
-    friend Bod2D operator*(Bod2D &point1, float  number);
-    friend Bod2D operator*(float  number, Bod2D &point1);
-    friend Bod2D operator/(Bod2D &point1, float number);
-    friend Bod2D operator/(float number, Bod2D &point1);
-    static float distance(const Bod2D &point1,const Bod2D &point2);
-    static float distanceFromBase(const Bod2D point);
-    static void centerOfLine( Bod2D point1, Bod2D point2);
+    Bod2D operator+(const Bod2D &point1) const;
+    Bod2D operator-(const Bod2D &point1) const;
+    Bod2D operator*(float number) const; // bod * cislo
+    friend Bod2D operator*(float  number, Bod2D &point1); //cislo * bod
+    Bod2D operator/( float number) const;
+    float distance(const Bod2D &point1);
+    float distanceFromBase() const;
+    void centerOfLine(const Bod2D & point1);
 
 
 

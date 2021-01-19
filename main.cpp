@@ -5,11 +5,16 @@
 
 int main() {
 
-    Bod2D A(3.0f,4);
-    Bod2D B(-2.0f,2);
-    std::cout<< "distance is: " << Bod2D::distance(B,A)<< std::endl;
-    std::cout<< "distance from base is: " << Bod2D::distanceFromBase(A);
-    Bod2D::centerOfLine(A,B);
+    Bod2D A(3.0f,3);
+    Bod2D B(-3.0f,-2);
+    std::cout<< "Vzdialenost A a B je: " << A.distance(B)<< std::endl;
+    std::cout<< "Vzdialenost bodov je: " <<A.distanceFromBase() << std::endl;
+    A.centerOfLine(B);
+    std::cout<< 2*A << std::endl;
+    std::cout<< A*2 << std::endl;
+    std::cout<< A-B << std::endl;
+    std::cout<< A+B << std::endl;
+    std::cout<< A/2 << std::endl;
 
 
 
@@ -68,19 +73,19 @@ std::istream & operator>>(std::istream &is, Bod2D &point)
     return is;
 }
 
-Bod2D operator+(Bod2D &point1, Bod2D &point2)
+Bod2D Bod2D::operator+(const Bod2D &point1) const
 {
-    return {point1.x+point2.x,point1.y+point2.y};
+    return {x+point1.x,y+point1.y};
 }
 
-Bod2D operator-(Bod2D &point1, Bod2D &point2)
+Bod2D Bod2D::operator-(const Bod2D &point1) const
 {
-    return {point1.x-point2.x,point1.y-point2.y};
+    return {x-point1.x,y-point1.y};
 }
 
-Bod2D operator*(Bod2D &point1, float  number)
+Bod2D Bod2D::operator*(float  number) const
 {
-    return {point1.x*number,point1.y*number};
+    return {x*number,y*number};
 }
 
 Bod2D operator*(float  number, Bod2D &point1)
@@ -88,39 +93,30 @@ Bod2D operator*(float  number, Bod2D &point1)
     return {number*point1.x,number*point1.y};
 }
 
-Bod2D operator/(Bod2D &point1, float number)
+Bod2D Bod2D::operator/(float number) const
 {
     if(number==0)
     {
         number= 1;
         std::cout<< "Delit nulou nemozno, preto suradnice bodu ostavaju nezmene."<< std::endl;
     }
-    return {point1.x/number,point1.y/number};
+    return {x/number,y/number};
 }
 
-Bod2D operator/(float number, Bod2D &point1)
-{
-    if(point1.x==0 or point1.y)
-    {
-        number= 1;
-        std::cout<< "Delit nulou nemozno, preto suradnice bodu ostavaju nezmene."<< std::endl;
-    }
-    return {number/point1.x,number/point1.y};
-}
 
-float Bod2D::distance(const Bod2D &point1,const Bod2D &point2)
+float Bod2D::distance(const Bod2D &point1)
 {
-    Bod2D differenceP(point2.x > 0 ? point1.x-point2.x : point2.x-point1.x,point2.y >0 ? point1.y-point2.y : point2.y-point1.y);
+    Bod2D differenceP(x > 0 ? x-point1.x : point1.x-x, y >0 ? y-point1.y : point1.y-y);
     return sqrt(differenceP.x*differenceP.x + differenceP.y*differenceP.y);
 }
 
-float Bod2D::distanceFromBase(const Bod2D point)
+float Bod2D::distanceFromBase() const
 {
-    return sqrt(point.x*point.x + point.y*point.y);
+    return sqrt(x*x + y*y);
 }
-void Bod2D::centerOfLine( Bod2D point1, Bod2D point2)
+void Bod2D::centerOfLine( const Bod2D & point1)
 {
-    Bod2D point = point1+point2;
-    std::cout<< "stred usecky je v bode: " << point/2 << std::endl;
+    Bod2D point(x+point1.x,y+point1.y);
+    std::cout<< "Stred usecky je v bode: " << point/2 << std::endl;
 
 }
