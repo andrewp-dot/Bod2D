@@ -1,14 +1,14 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include "Bod2D.h"
 
 
 int main() {
 
-    Bod2D A(3.0f,3);
+    Bod2D A(3.0f,4);
     Bod2D B(-3.0f,-2);
     std::cout<< "Vzdialenost A a B je: " << A.distance(B)<< std::endl;
-    std::cout<< "Vzdialenost bodov je: " <<A.distanceFromBase() << std::endl;
+    std::cout<< "Vzdialenost A a [0,0] je: "<< A.distance()<<std::endl;
     A.centerOfLine(B);
     std::cout<< 2*A << std::endl;
     std::cout<< A*2 << std::endl;
@@ -104,19 +104,16 @@ Bod2D Bod2D::operator/(float number) const
 }
 
 
-float Bod2D::distance(const Bod2D &point1)
+float Bod2D::distance(const Bod2D &point1 )
 {
     Bod2D differenceP(x > 0 ? x-point1.x : point1.x-x, y >0 ? y-point1.y : point1.y-y);
     return sqrt(differenceP.x*differenceP.x + differenceP.y*differenceP.y);
 }
 
-float Bod2D::distanceFromBase() const
+
+Bod2D Bod2D::centerOfLine( const Bod2D & point1)
 {
-    return sqrt(x*x + y*y);
-}
-void Bod2D::centerOfLine( const Bod2D & point1)
-{
-    Bod2D point(x+point1.x,y+point1.y);
-    std::cout<< "Stred usecky je v bode: " << point/2 << std::endl;
+
+    return { x+point1.x,y+point1.y};
 
 }

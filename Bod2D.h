@@ -21,9 +21,8 @@ public:
     Bod2D operator*(float number) const; // bod * cislo
     friend Bod2D operator*(float  number, Bod2D &point1); //cislo * bod
     Bod2D operator/( float number) const;
-    float distance(const Bod2D &point1);
-    float distanceFromBase() const;
-    void centerOfLine(const Bod2D & point1);
+    float distance(const Bod2D &point1 = Bod2D(0.0f,0) );
+    Bod2D centerOfLine(const Bod2D & point1);
 
 
 
