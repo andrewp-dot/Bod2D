@@ -1,21 +1,21 @@
 #include <iostream>
 #include <cmath>
+#include <fstream>
 #include "Bod2D.h"
 
 
+int compareFromHighest(const void * a1, const void * a2);
+
 int main() {
+    std::ofstream fout;
+    std::ifstream fin;
+    Line * arr = new Line[100];
 
-    Bod2D A(3.0f,4);
-    Bod2D B(-3.0f,-2);
-    std::cout<< "Vzdialenost A a B je: " << A.distance(B)<< std::endl;
-    std::cout<< "Vzdialenost A a [0,0] je: "<< A.distance()<<std::endl;
-    A.centerOfLine(B);
-    std::cout<< 2*A << std::endl;
-    std::cout<< A*2 << std::endl;
-    std::cout<< A-B << std::endl;
-    std::cout<< A+B << std::endl;
-    std::cout<< A/2 << std::endl;
+    Line::getDistanceFromFile(fin,"usecky.txt", arr);
+    Line::getSortedDistance(fout,"zoradeneUsecky.txt", arr, 100);
 
+    delete [] arr;
+    arr = NULL;
 
 
     return 0;
@@ -104,16 +104,127 @@ Bod2D Bod2D::operator/(float number) const
 }
 
 
-float Bod2D::distance(const Bod2D &point1 )
+double Bod2D::distance(const Bod2D &point1 ) const
 {
     Bod2D differenceP(x > 0 ? x-point1.x : point1.x-x, y >0 ? y-point1.y : point1.y-y);
     return sqrt(differenceP.x*differenceP.x + differenceP.y*differenceP.y);
 }
 
 
-Bod2D Bod2D::centerOfLine( const Bod2D & point1)
+Bod2D Bod2D::centerOfLine( const Bod2D & point1) const
 {
 
     return { x+point1.x,y+point1.y};
 
 }
+
+void Bod2D::OpenFileCheck::getMsg() const
+{
+    std::cout<<msg;
+}
+
+int compareFromHighest(const void * a1, const void * a2)
+{
+    Line * p1 = (Line *)a1;
+    Line * p2 = (Line *)a2;
+    int result = 0;
+    if((*p1)<(*p2))
+    {
+        result = 1;
+    }
+    if(!((*p1)<(*p2)))
+    {
+        result= -1;
+    }
+    return result;
+}
+
+void Line::getDistanceFromFile(std::ifstream & fin, const char * fileName,  Line arr[] )
+{
+    try {
+        fin.open(fileName);
+        if (!fin.is_open()) {
+            throw Bod2D::OpenFileCheck("Something went wrong");
+        };
+        Bod2D A(0.0f,0);
+        Bod2D B(0.0f,0);
+        Bod2D Temp1(0.0f,0);
+        Bod2D Temp2(0.0f,0);
+        int i =0;
+
+        double minDistance = Temp1.distance(Temp2);
+        while (fin >> A >> B)
+        {
+            Line line(A,B);
+            double currentDistance = A.distance(B);
+            *(arr + i) = line;
+            i++;
+            if(minDistance<currentDistance)
+            {
+                Temp1 = A;
+                Temp2 = B;
+                minDistance = currentDistance;
+            }
+        }
+        std::cout<< "Najmvacsia vzdialenost je medzi bodmi " << Temp1 << " a " << Temp2 << ", ma hodnotu: " << minDistance <<std::endl;
+        fin.close();
+    }
+    catch (Bod2D::OpenFileCheck &ex)
+    {
+        ex.getMsg();
+    }
+
+
+}
+
+void Line::getSortedDistance(std::ofstream & fout, const char * fileName, Line arr[], int numberOfElements)
+{
+    try
+    {
+        fout.open(fileName);
+        if (!fout.is_open())
+        {
+            throw Bod2D::OpenFileCheck("Something went wrong");
+        };
+        qsort(arr,numberOfElements,sizeof(Line),compareFromHighest);//params: value, numberOfValues, sizeOf(type of the value), compareFunction;
+        for(int i=0;i<numberOfElements;i++)
+        {
+            fout << *(arr + i)<< " Length: "<< (arr +i)->length << std::endl;
+        }
+
+        fout.close();
+    }
+    catch (Bod2D::OpenFileCheck &ex)
+    {
+        ex.getMsg();
+    };
+}
+
+//DEKLARATION OF CHILD CLASS 'LINE'
+
+
+Line::Line( Bod2D myBasePoint,  Bod2D myEndPoint): basePoint(myBasePoint), endPoint(myEndPoint){}
+
+std::ostream & operator<<(std::ostream & os, const Line & line)
+{
+    os << line.basePoint << " " << line.endPoint;
+    return os;
+}
+
+std::istream & operator>>(std::istream &is, Line & line)
+{
+    is >> line.basePoint >> line.endPoint;
+    return is;
+}
+
+bool Line::operator<(Line & line1)
+{
+    return length<line1.length;
+}
+
+
+
+
+
+
+
