@@ -8,6 +8,14 @@
 
 D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/Bod2D.h
 
+D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/inout.h
+iostream
+-
+fstream
+-
+iomanip
+-
+
 D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/main.cpp
 iostream
 -
@@ -17,4 +25,6 @@ fstream
 -
 Bod2D.h
 D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/Bod2D.h
+inout.h
+D:/Ap/Programovanie/MAP/Projects/CLionProjects/Bod2D/inout.h
 
